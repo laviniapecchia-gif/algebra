@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quiz Algebra Lineare</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="hero card">
+      <div>
+        <p class="eyebrow">Allenamento esame</p>
+        <h1>Quiz Algebra Lineare</h1>
+        <p class="subtitle">120 domande a risposta singola o multipla, con correzione e motivazione.</p>
+      </div>
+      <div class="scorebox">
+        <span id="score">0</span>/<span id="answered">0</span>
+        <small>punteggio</small>
+      </div>
+    </section>
+
+    <section class="controls card">
+      <label>
+        Argomento
+        <select id="topicFilter">
+          <option value="all">Tutti gli argomenti</option>
+        </select>
+      </label>
+      <label>
+        Modalità
+        <select id="modeSelect">
+          <option value="ordered">In ordine</option>
+          <option value="random">Casuale</option>
+          <option value="errors">Solo errori salvati</option>
+        </select>
+      </label>
+      <button id="restartBtn" type="button">Ricomincia</button>
+      <button id="clearErrorsBtn" type="button" class="secondary">Svuota errori</button>
+    </section>
+
+    <section class="quiz card">
+      <div class="quizTop">
+        <span id="topicBadge" class="badge">Argomento</span>
+        <span id="questionCounter">Domanda 1/120</span>
+      </div>
+
+      <h2 id="questionText">Caricamento...</h2>
+      <p id="hint" class="hint"></p>
+      <form id="optionsForm" class="options"></form>
+
+      <div id="feedback" class="feedback hidden"></div>
+
+      <div class="actions">
+        <button id="checkBtn" type="button">Conferma risposta</button>
+        <button id="nextBtn" type="button" class="secondary hidden">Avanti</button>
+      </div>
+    </section>
+
+    <section class="summary card hidden" id="summary">
+      <h2>Sessione finita</h2>
+      <p id="summaryText"></p>
+      <button id="summaryRestartBtn" type="button">Rifai il quiz</button>
+    </section>
+  </main>
+
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
